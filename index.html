@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matania's 1st Birthday · You're Invited! 🎈</title>
+<meta name="description" content="Our Little Sunshine is Turning One! Please join us to celebrate Matania's 1st birthday — Sunday, September 20, 2026 · 7:00 (Lunch) · Bole Bulbula, Addis Ababa.">
+
+<!-- Favicon: 🎈 emoji served as an inline SVG data URI -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎈</text></svg>">
+
+<!-- EDIT: Open Graph — once the site is deployed, set og:url and og:image to ABSOLUTE URLs (og:image needs a full https:// link for WhatsApp/Telegram previews) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Matania's 1st Birthday">
+<meta property="og:title" content="Matania's 1st Birthday — You're Invited! 🎈">
+<meta property="og:description" content="Our Little Sunshine is Turning One! Sunday, September 20, 2026 · 7:00 (Lunch) · Bole Bulbula, Addis Ababa.">
+<meta property="og:image" content="images/og-cover.jpg">
+<meta property="og:url" content="https://matania-birthday.example.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFF8F0">
+
+<!-- Google Fonts: Fraunces (display serif) · Poppins (body) · Noto Sans Ethiopic (Amharic) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Noto+Sans+Ethiopic:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS via CDN — zero build step.
+     NOTE: the CDN build logs a "should not be used in production" advisory. The tiny filter
+     below silences only that one advisory; delete the filter if you ever switch to a PostCSS/Tailwind CLI build. -->
+<script>
+(function () {
+  var warn = console.warn;
+  console.warn = function () {
+    for (var i = 0; i < arguments.length; i++) {
+      if (typeof arguments[i] === 'string' && arguments[i].indexOf('cdn.tailwindcss.com') !== -1) { return; }
+    }
+    return warn.apply(console, arguments);
+  };
+})();
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FFF8F0',
+        'gold-soft': '#D9A25C',
+        'gold-bright': '#E8B86D',
+        skysoft: '#A8D8EA',
+        ink: '#3A3A3A',
+        night: '#1C2230',
+        'night-card': '#273043'
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        body: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        eth: ['"Noto Sans Ethiopic"', 'Poppins', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 18px 40px -22px rgba(58,58,58,.28)',
+        lift: '0 26px 55px -22px rgba(217,162,92,.4)'
+      }
+    }
+  }
+};
+</script>
+
+<style>
+/* ================= base ================= */
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 4.75rem; }
+::selection { background: rgba(232,184,109,.4); }
+.font-eth { font-family: 'Noto Sans Ethiopic', 'Poppins', sans-serif; }
+
+/* ============ standardised type scale (scales smoothly, no big jumps) ============ */
+.display-1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.04; letter-spacing: -.015em; font-size: clamp(2.75rem, 11.5vw, 6.25rem); }
+.section-title { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.16; font-size: clamp(1.5rem, 5vw, 2.6rem); }
+.section-title--long { font-size: clamp(1.35rem, 4.2vw, 2.1rem); }
+.sub-title { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.3; font-size: clamp(1.2rem, 3.4vw, 1.6rem); }
+.eyebrow { font-size: .68rem; font-weight: 500; text-transform: uppercase; letter-spacing: .3em; color: #D9A25C; }
+.dark .eyebrow { color: #E8B86D; }
+@media (min-width: 640px) { .eyebrow { font-size: .75rem; letter-spacing: .34em; } }
+
+/* ============ standardised vertical rhythm ============ */
+.section-pad { padding-top: clamp(3.25rem, 8vw, 6.5rem); padding-bottom: clamp(3.25rem, 8vw, 6.5rem); }
+.section-pad-b { padding-bottom: clamp(3.25rem, 8vw, 6.5rem); }
+
+/* ============ never scroll sideways on small phones ============ */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* ============ scroll reveal (enabled only when JS runs) ============ */
+.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1); will-change: opacity, transform; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal-delay-1 { transition-delay: .12s; }
+.js .reveal-delay-2 { transition-delay: .24s; }
+.js .reveal-delay-3 { transition-delay: .36s; }
+
+/* ============ decorative animations ============ */
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-16px) rotate(2deg); } }
+@keyframes floaty-soft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes glowpulse { 0%,100% { opacity: .65; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+@keyframes twinkle { 0%,100% { opacity: .15; transform: scale(.75); } 50% { opacity: .9; transform: scale(1); } }
+@keyframes digit-pop { 0% { transform: translateY(8px); opacity: .2; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes cue-bob { 0%,100% { transform: translateY(0); opacity: .95; } 50% { transform: translateY(8px); opacity: .5; } }
+.anim-float { animation: floaty 7s ease-in-out infinite; }
+.anim-float-slow { animation: floaty-soft 9s ease-in-out infinite; }
+.anim-glow { animation: glowpulse 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.anim-twinkle { animation: twinkle 3.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.digit-pop { animation: digit-pop .38s cubic-bezier(.22,.61,.36,1); }
+
+/* ============ hero ============ */
+.hero-bg { background: linear-gradient(176deg,#FFF8F0 0%,#FDEED6 34%,#F7DFAF 55%,#D9ECF4 80%,#A8D8EA 108%); }
+.dark .hero-bg { background: linear-gradient(176deg,#1C2230 0%,#232B3D 38%,#2E3750 60%,#274257 86%,#2E5470 110%); }
+.scroll-cue { animation: cue-bob 2.2s ease-in-out infinite; }
+
+/* ============ photo frames with pastel fallback ============ */
+.photo-frame { position: relative; overflow: hidden; background: linear-gradient(135deg,#FFEBCB 0%,#F6D9A6 48%,#CBE6F2 100%); }
+.photo-frame--blue { background: linear-gradient(135deg,#DDF0F8 0%,#A8D8EA 55%,#F6D9A6 115%); }
+.photo-frame--rose { background: linear-gradient(135deg,#FFF3E4 0%,#F3E3CE 45%,rgba(232,184,109,.4) 100%); }
+.dark .photo-frame, .dark .photo-frame--blue, .dark .photo-frame--rose { background: linear-gradient(135deg,#2E3648 0%,#3A4258 55%,#46506B 100%); }
+.photo-frame img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+
+/* ============ nav ============ */
+.nav-link { display: inline-flex; align-items: center; min-height: 2.75rem; white-space: nowrap; border-radius: 9999px; padding: .5rem .95rem; font-size: .8rem; font-weight: 500; letter-spacing: .02em; opacity: .72; transition: opacity .25s, background-color .25s, color .25s; }
+.nav-link:hover { opacity: 1; background: rgba(217,162,92,.14); color: #B07E3B; }
+.dark .nav-link:hover { color: #E8B86D; }
+.nav-link.active { opacity: 1; background: rgba(217,162,92,.16); color: #B07E3B; }
+.dark .nav-link.active { color: #E8B86D; }
+
+/* ============ mobile hamburger menu ============ */
+.mobile-menu { display: none; }
+.mobile-menu.open { display: block; }
+@media (min-width: 640px) { .mobile-menu, .mobile-menu.open { display: none; } }
+.mobile-link { display: flex; align-items: center; min-height: 2.75rem; padding: .55rem 1rem; border-radius: .9rem; font-size: .95rem; font-weight: 500; opacity: .85; transition: background-color .25s, opacity .25s, color .25s; }
+.mobile-link:hover, .mobile-link:focus-visible { background: rgba(217,162,92,.14); opacity: 1; color: #B07E3B; }
+.dark .mobile-link:hover, .dark .mobile-link:focus-visible { color: #E8B86D; }
+#menu-toggle .icon-close { display: none; }
+#site-nav.menu-open #menu-toggle .icon-menu { display: none; }
+#site-nav.menu-open #menu-toggle .icon-close { display: block; }
+#site-nav { transition: background-color .35s ease, box-shadow .35s ease; }
+#site-nav.nav-scrolled { background: rgba(255,248,240,.85); backdrop-filter: blur(10px); box-shadow: 0 8px 26px -20px rgba(58,58,58,.5); }
+.dark #site-nav.nav-scrolled { background: rgba(28,34,48,.85); }
+#theme-toggle .icon-moon { display: none; }
+.dark #theme-toggle .icon-sun { display: none; }
+.dark #theme-toggle .icon-moon { display: block; }
+
+/* ============ timeline ============ */
+.timeline-rail { background: linear-gradient(to bottom, rgba(232,184,109,.9), rgba(217,162,92,.35), rgba(168,216,234,.85)); }
+
+/* ============ gallery ============ */
+.gallery-track { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-track > * { scroll-snap-align: center; }
+
+/* ============ lightbox ============ */
+.lightbox { position: fixed; inset: 0; z-index: 60; display: none; }
+.lightbox.open { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; background: rgba(21,24,33,.93); backdrop-filter: blur(8px); }
+.lightbox .photo-frame img { object-fit: contain; }
+.lb-btn { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 9999px; color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(4px); transition: background-color .25s, transform .25s; }
+.lb-btn:hover { background: rgba(232,184,109,.35); }
+.lb-btn:active { transform: scale(.94); }
+
+/* ============ divider stars ============ */
+.divider-line { height: 1px; flex: 1; max-width: 130px; background: linear-gradient(to right, transparent, rgba(217,162,92,.55), transparent); }
+.dark .divider-line { background: linear-gradient(to right, transparent, rgba(232,184,109,.45), transparent); }
+
+a:focus-visible, button:focus-visible { outline: 2px solid #D9A25C; outline-offset: 3px; }
+.dark a:focus-visible, .dark button:focus-visible { outline-color: #E8B86D; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .anim-float, .anim-float-slow, .anim-glow, .anim-twinkle, .digit-pop, .scroll-cue { animation: none !important; }
+}
+</style>
+</head>
+
+<body class="bg-cream font-body text-ink antialiased transition-colors duration-300 dark:bg-night dark:text-[#E9E4DA]">
+
+<a href="#invite" class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-[70] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:shadow-soft">Skip to the invitation</a>
+
+<!-- ==================== NAV ==================== -->
+<header id="site-nav" class="fixed inset-x-0 top-0 z-40">
+  <nav class="mx-auto flex max-w-6xl items-center gap-2 px-3 py-2.5 sm:gap-4 sm:px-6" aria-label="Main navigation">
+    <a href="#top" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-bright to-gold-soft font-display text-xl font-semibold text-white shadow-soft ring-2 ring-white/70 dark:ring-white/20" aria-label="Matania — back to top">M</a>
+
+    <!-- desktop links (phones use the hamburger menu below) -->
+    <div class="hidden flex-1 items-center gap-1 sm:flex sm:justify-end">
+      <a class="nav-link" href="#invite">Invitation</a>
+      <a class="nav-link" href="#story">His First Year</a>
+      <a class="nav-link" href="#timeline">The Day</a>
+      <a class="nav-link" href="#venue">Venue</a>
+      <a class="nav-link" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+
+    <span class="flex-1 sm:hidden"></span>
+
+    <button id="theme-toggle" type="button" aria-label="Toggle day / night theme" aria-pressed="false"
+      class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-gold-soft/40 bg-white/70 text-gold-soft shadow-soft transition hover:bg-gold-bright/15 dark:border-white/15 dark:bg-white/10 dark:text-gold-bright">
+      <svg class="icon-sun h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+      <svg class="icon-moon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+    </button>
+
+    <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+      class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-gold-soft/40 bg-white/70 text-gold-soft shadow-soft transition hover:bg-gold-bright/15 sm:hidden dark:border-white/15 dark:bg-white/10 dark:text-gold-bright">
+      <svg class="icon-menu h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </nav>
+
+  <!-- mobile dropdown menu (toggled by #menu-toggle) -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mx-3 mb-2 rounded-2xl border border-gold-soft/30 bg-cream/95 p-1.5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-night/95">
+      <a class="mobile-link" href="#invite">Invitation</a>
+      <a class="mobile-link" href="#story">His First Year</a>
+      <a class="mobile-link" href="#timeline">The Day</a>
+      <a class="mobile-link" href="#venue">Venue</a>
+      <a class="mobile-link" href="#gallery">Gallery</a>
+      <a class="mobile-link" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section id="top" class="hero-bg relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-24 pt-28 sm:pb-28">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <!-- sun -->
+    <svg class="anim-glow absolute left-[6%] top-[13%] w-14 text-gold-bright/60 sm:w-20" viewBox="0 0 100 100" fill="none">
+      <g stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M50 6v12M50 82v12M6 50h12M82 50h12M18 18l9 9M73 73l9 9M82 18l-9 9M27 73l-9 9"/></g>
+      <circle cx="50" cy="50" r="20" fill="currentColor"/>
+    </svg>
+    <!-- one soft cloud -->
+    <svg class="anim-float-slow absolute right-[7%] top-[16%] w-28 text-white/75 sm:w-40 dark:text-white/[.08]" viewBox="0 0 120 60" fill="currentColor">
+      <circle cx="32" cy="38" r="17"/><circle cx="58" cy="28" r="21"/><circle cx="84" cy="38" r="15"/><rect x="24" y="36" width="70" height="19" rx="9.5"/>
+    </svg>
+    <!-- one floating balloon -->
+    <svg class="anim-float absolute bottom-[18%] right-[8%] w-9 sm:w-14" viewBox="0 0 60 112" fill="none">
+      <path d="M30 67c7 12-6 20 0 32" stroke="#D9A25C" stroke-width="1.6" opacity=".6"/>
+      <ellipse cx="30" cy="36" rx="21" ry="26" fill="#E8B86D"/>
+      <path d="M30 61l-5 7h10z" fill="#E8B86D"/>
+      <ellipse cx="22" cy="27" rx="5" ry="8" fill="#fff" opacity=".35" transform="rotate(-18 22 27)"/>
+    </svg>
+    <!-- a few quiet confetti dots -->
+    <svg class="absolute inset-0 h-full w-full opacity-80" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <g>
+        <circle class="anim-twinkle" style="animation-delay:0s" cx="1260" cy="180" r="5" fill="#A8D8EA"/>
+        <circle class="anim-twinkle" style="animation-delay:1.2s" cx="430" cy="125" r="3" fill="#fff"/>
+        <circle class="anim-twinkle" style="animation-delay:.5s" cx="230" cy="650" r="4" fill="#A8D8EA"/>
+        <circle class="anim-twinkle" style="animation-delay:1.9s" cx="1180" cy="600" r="3" fill="#fff"/>
+        <circle class="anim-twinkle" style="animation-delay:2.6s" cx="105" cy="430" r="3" fill="#E8B86D"/>
+      </g>
+    </svg>
+    <svg class="absolute bottom-0 left-0 w-full text-cream dark:text-night" viewBox="0 0 1440 90" preserveAspectRatio="none" fill="currentColor">
+      <path d="M0 90V52c220 30 470 36 720 12 250-24 500-22 720 12v14z"/>
+    </svg>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-3xl text-center">
+    <p class="reveal eyebrow">Our Little Sunshine is Turning One!</p>
+    <h1 class="reveal reveal-delay-1 display-1 mt-3 bg-gradient-to-r from-gold-soft via-gold-bright to-gold-soft bg-clip-text text-transparent">Matania</h1>
+    <p class="reveal reveal-delay-1 mt-4 text-sm text-ink/70 sm:text-base md:text-lg dark:text-cream/75">Sunday, September 20, 2026 · Bole Bulbula, Addis Ababa</p>
+
+    <!-- live countdown to 2026-09-20T13:00:00+03:00 (Africa/Addis_Ababa) -->
+    <div class="reveal reveal-delay-2 mx-auto mt-8 grid w-full max-w-[21rem] grid-cols-4 gap-1.5 sm:mt-9 sm:gap-3 md:max-w-md" role="timer" aria-label="Countdown to the party">
+      <div class="rounded-2xl border border-white/70 bg-white/70 px-1 py-2.5 shadow-soft backdrop-blur-sm sm:py-3.5 dark:border-white/10 dark:bg-white/10">
+        <span id="cd-days" class="block font-display text-xl font-semibold tabular-nums sm:text-3xl md:text-4xl">00</span>
+        <span class="mt-1 block text-[0.55rem] uppercase tracking-[0.14em] text-ink/60 sm:text-[0.7rem] sm:tracking-[0.2em] dark:text-cream/60">Days</span>
+      </div>
+      <div class="rounded-2xl border border-white/70 bg-white/70 px-1 py-2.5 shadow-soft backdrop-blur-sm sm:py-3.5 dark:border-white/10 dark:bg-white/10">
+        <span id="cd-hours" class="block font-display text-xl font-semibold tabular-nums sm:text-3xl md:text-4xl">00</span>
+        <span class="mt-1 block text-[0.55rem] uppercase tracking-[0.14em] text-ink/60 sm:text-[0.7rem] sm:tracking-[0.2em] dark:text-cream/60">Hours</span>
+      </div>
+      <div class="rounded-2xl border border-white/70 bg-white/70 px-1 py-2.5 shadow-soft backdrop-blur-sm sm:py-3.5 dark:border-white/10 dark:bg-white/10">
+        <span id="cd-minutes" class="block font-display text-xl font-semibold tabular-nums sm:text-3xl md:text-4xl">00</span>
+        <span class="mt-1 block text-[0.55rem] uppercase tracking-[0.14em] text-ink/60 sm:text-[0.7rem] sm:tracking-[0.2em] dark:text-cream/60">Minutes</span>
+      </div>
+      <div class="rounded-2xl border border-white/70 bg-white/70 px-1 py-2.5 shadow-soft backdrop-blur-sm sm:py-3.5 dark:border-white/10 dark:bg-white/10">
+        <span id="cd-seconds" class="block font-display text-xl font-semibold tabular-nums sm:text-3xl md:text-4xl">00</span>
+        <span class="mt-1 block text-[0.55rem] uppercase tracking-[0.14em] text-ink/60 sm:text-[0.7rem] sm:tracking-[0.2em] dark:text-cream/60">Seconds</span>
+      </div>
+    </div>
+    <p id="cd-done" class="mt-4 hidden text-sm font-medium text-gold-soft dark:text-gold-bright">It's party time! 🎉🎈🎉</p>
+
+    <!-- EDIT: replace images/hero.jpg with a real photo of Matania (portrait orientation works best) -->
+    <figure class="reveal reveal-delay-3 photo-frame relative mx-auto mt-8 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2.25rem] shadow-lift ring-1 ring-white/60 sm:mt-10 sm:max-w-md">
+      <svg class="absolute inset-0 m-auto h-20 w-20 text-white/70" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+      <img src="images/hero.jpg" alt="Matania" onerror="this.style.display='none'">
+    </figure>
+  </div>
+
+  <div class="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 sm:bottom-6">
+    <a href="#invite" class="scroll-cue grid h-11 w-11 place-items-center rounded-full border border-gold-soft/30 bg-white/60 text-gold-soft shadow-soft backdrop-blur-sm transition-colors hover:bg-white/85 dark:border-white/10 dark:bg-white/10 dark:text-gold-bright" aria-label="Scroll down to the invitation">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </div>
+</section>
+
+<main>
+  <!-- ==================== INVITATION ==================== -->
+  <section id="invite" class="section-pad relative px-4">
+    <div class="mx-auto max-w-4xl">
+      <div class="reveal mx-auto max-w-2xl text-center">
+        <p class="eyebrow">Invitation</p>
+        <h2 class="section-title mt-3">You're Invited</h2>
+      </div>
+
+      <div class="reveal mt-8 rounded-[2rem] border border-gold-soft/40 bg-white/90 p-5 shadow-soft sm:mt-10 sm:p-10 dark:border-white/10 dark:bg-night-card/90">
+        <!-- EDIT: replace images/invite.jpg with a favourite portrait of Matania -->
+        <figure class="photo-frame mx-auto mb-8 aspect-square w-28 overflow-hidden rounded-full shadow-soft ring-4 ring-white/70 sm:w-36 dark:ring-white/10">
+          <svg class="absolute inset-0 m-auto h-10 w-10 text-white/70" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+          <img src="images/invite.jpg" alt="Matania — portrait" loading="lazy" onerror="this.style.display='none'">
+        </figure>
+        <div class="grid gap-8 md:grid-cols-2 md:gap-0">
+          <!-- Amharic (verbatim — do not translate) -->
+          <div lang="am" class="font-eth text-center md:border-r md:border-gold-soft/30 md:pr-10 dark:md:border-gold-bright/20">
+            <p class="text-lg font-semibold text-gold-soft sm:text-xl md:text-2xl dark:text-gold-bright">የደስታችን ጥግ!</p>
+            <p class="mt-5 text-[0.98rem] leading-loose sm:text-base">የአይናችን ማረፊያ ማታኒ 1ኛ ዓመት ልደቱን ሊያከብር ነው። በዚህ ልዩ ቀን ደስታችንን እንድትጋሩን በታላቅ አክብሮት እንጠይቃለን።</p>
+            <div class="mt-6 space-y-1.5 text-[0.95rem] sm:text-base">
+              <p>ቀን፦ የፊታችን እሁድ</p>
+              <p>ሰዓት፦ ከቀኑ 7 ሰዓት</p>
+              <p>ቦታ፦ ቦሌ ቡልቡላ</p>
+            </div>
+          </div>
+          <!-- English (verbatim) -->
+          <div class="text-center md:pl-10">
+            <p class="sub-title text-gold-soft dark:text-gold-bright">Our Little Sunshine is Turning One!</p>
+            <p class="mt-5 text-[0.98rem] leading-relaxed sm:text-base">Please join us to celebrate Matania's 1st birthday! Your presence would make the day extra special.</p>
+            <div class="mt-6 space-y-1.5 text-[0.95rem] sm:text-base">
+              <p>When: Sunday, September 20, 2026</p>
+              <p>Time: 7:00 (Lunch)</p>
+              <p>Where: Bole Bulbula</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- date / time / venue at a glance -->
+        <div class="mt-8 grid gap-3 border-t border-gold-soft/30 pt-6 sm:mt-10 sm:grid-cols-3 sm:gap-4 sm:pt-8 dark:border-white/10">
+          <div class="flex items-center justify-center gap-2.5 rounded-2xl bg-cream/80 px-3 py-3 sm:gap-3 sm:px-4 dark:bg-white/5">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gold-bright/20 text-gold-soft sm:h-10 sm:w-10 dark:text-gold-bright">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
+            </span>
+            <span class="min-w-0 text-left"><span class="block text-xs uppercase tracking-widest text-ink/50 dark:text-cream/50">Date</span><span class="block text-sm font-medium">Sunday, September 20, 2026</span></span>
+          </div>
+          <div class="flex items-center justify-center gap-2.5 rounded-2xl bg-cream/80 px-3 py-3 sm:gap-3 sm:px-4 dark:bg-white/5">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gold-bright/20 text-gold-soft sm:h-10 sm:w-10 dark:text-gold-bright">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </span>
+            <span class="min-w-0 text-left"><span class="block text-xs uppercase tracking-widest text-ink/50 dark:text-cream/50">Time</span><span class="block text-sm font-medium">1:00 PM · 7:00 (Lunch)</span></span>
+          </div>
+          <div class="flex items-center justify-center gap-2.5 rounded-2xl bg-cream/80 px-3 py-3 sm:gap-3 sm:px-4 dark:bg-white/5">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gold-bright/20 text-gold-soft sm:h-10 sm:w-10 dark:text-gold-bright">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <span class="min-w-0 text-left"><span class="block text-xs uppercase tracking-widest text-ink/50 dark:text-cream/50">Venue</span><span class="block text-sm font-medium">Bole Bulbula, Addis Ababa</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex items-center justify-center gap-4 px-4" aria-hidden="true">
+    <span class="divider-line"></span><span class="text-gold-soft dark:text-gold-bright">✦</span><span class="divider-line"></span>
+  </div>
+
+  <!-- ==================== HIS FIRST YEAR ==================== -->
+  <section id="story" class="section-pad px-4">
+    <div class="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-14">
+      <figure class="reveal photo-frame photo-frame--blue relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2rem] shadow-soft ring-1 ring-white/60 md:order-2">
+        <svg class="absolute inset-0 m-auto h-16 w-16 text-white/70" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+        <!-- EDIT: replace images/first-year.jpg with a favourite photo from Matania's first year -->
+        <img src="images/first-year.jpg" alt="Matania's first year" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+
+      <div class="md:order-1">
+        <div class="reveal">
+          <p class="eyebrow">His First Year</p>
+          <h2 class="section-title mt-3">A Year of Firsts</h2>
+        </div>
+        <!-- EDIT: personalize this paragraph with your own memories of Matania's first year -->
+        <div class="reveal reveal-delay-1 mt-5 space-y-4 text-[0.97rem] leading-relaxed text-ink/80 sm:text-base dark:text-cream/75">
+          <p>This year has been a collection of beautiful firsts — the first sleepy smile, the first contagious giggle, the first tiny hand wrapped around a finger, and the first wobbly steps across the living-room floor.</p>
+          <p>Every day with Matania has been a gift of pure joy. Now the first of many birthdays is here, and we can't imagine celebrating it anywhere but surrounded by the people we love most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONAL SECTION: remove if not wanted, or replace with a scripture verse / family blessing -->
+  <section id="blessing" class="section-pad-b px-4">
+    <div class="reveal mx-auto max-w-3xl rounded-[2rem] border border-gold-soft/30 bg-gradient-to-br from-gold-bright/10 via-transparent to-skysoft/20 px-5 py-9 sm:px-10 sm:py-11">
+      <div class="grid items-center gap-6 text-center md:grid-cols-[minmax(0,12rem)_minmax(0,1fr)] md:gap-8 md:text-left">
+        <!-- EDIT: replace images/blessing.jpg with a sweet photo of Matania -->
+        <figure class="photo-frame mx-auto aspect-[4/5] w-36 overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 sm:w-40 md:w-full">
+          <svg class="absolute inset-0 m-auto h-12 w-12 text-white/70" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+          <img src="images/blessing.jpg" alt="Matania — first birthday" loading="lazy" onerror="this.style.display='none'">
+        </figure>
+
+        <div>
+          <!-- birthday cake illustration — inline SVG line art (no external image) -->
+          <svg class="mx-auto h-12 w-12 text-gold-soft md:mx-0 dark:text-gold-bright" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M48 42V30"/>
+            <path d="M48 30c3.2-2 4.2-4.8 0-7.4-4.2 2.6-3.2 5.4 0 7.4Z"/>
+            <path d="M32 62V48a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v14"/>
+            <path d="M20 84V68a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v16"/>
+            <path d="M20 62h56"/>
+            <path d="M16 84h64"/>
+            <circle cx="38" cy="53" r="1.5" fill="currentColor" stroke="none"/>
+            <circle cx="48" cy="53" r="1.5" fill="currentColor" stroke="none"/>
+            <circle cx="58" cy="53" r="1.5" fill="currentColor" stroke="none"/>
+            <circle cx="33" cy="75" r="1.5" fill="currentColor" stroke="none"/>
+            <circle cx="48" cy="75" r="1.5" fill="currentColor" stroke="none"/>
+            <circle cx="63" cy="75" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <p class="mt-5 font-display text-lg italic leading-relaxed sm:text-xl md:text-2xl">"May your days be full of sunshine, your laughter never-ending, and your little heart always know just how deeply you are loved."</p>
+          <p class="mt-4 text-xs font-medium uppercase tracking-[0.25em] text-gold-soft sm:text-sm dark:text-gold-bright">Happy First Birthday, Matania</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /OPTIONAL SECTION -->
+
+  <!-- ==================== THE DAY / SCHEDULE ==================== -->
+  <section id="timeline" class="section-pad bg-white/50 px-4 dark:bg-white/[0.03]">
+    <div class="mx-auto max-w-3xl">
+      <div class="reveal text-center">
+        <p class="eyebrow">The Day</p>
+        <h2 class="section-title section-title--long mt-3">The Celebration — Sunday, September 20, 2026</h2>
+      </div>
+
+      <!-- EDIT: replace images/the-day.jpg with a photo from the celebration (or a recent favourite of Matania) -->
+      <figure class="reveal photo-frame relative mx-auto mt-8 aspect-[16/9] w-full max-w-2xl overflow-hidden rounded-[2rem] shadow-soft ring-1 ring-white/60 sm:mt-10">
+        <svg class="absolute inset-0 m-auto h-12 w-12 text-white/70" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+        <img src="images/the-day.jpg" alt="Matania — ready to celebrate" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+
+      <!-- EDIT: confirm actual schedule -->
+      <div class="relative mx-auto mt-10 max-w-2xl sm:mt-12">
+        <span class="timeline-rail absolute bottom-2 left-4 top-2 w-0.5 -translate-x-1/2 rounded-full md:left-1/2" aria-hidden="true"></span>
+        <ol class="space-y-8 sm:space-y-10">
+          <li class="relative pl-12 md:pl-0">
+            <span class="absolute left-4 top-5 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gold-bright ring-4 ring-gold-bright/25 md:left-1/2" aria-hidden="true"></span>
+            <div class="rounded-2xl border border-gold-soft/30 bg-white/90 px-5 py-4 shadow-soft sm:px-6 sm:py-5 dark:border-white/10 dark:bg-night-card md:mr-[calc(50%_+_2rem)] md:text-right">
+              <p class="font-display text-base font-semibold text-gold-soft sm:text-lg dark:text-gold-bright">12:30 PM</p>
+              <p class="mt-0.5 text-[0.95rem] font-medium sm:text-base">Guests Arrive</p>
+            </div>
+          </li>
+          <li class="relative pl-12 md:pl-0">
+            <span class="absolute left-4 top-5 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gold-bright ring-4 ring-gold-bright/25 md:left-1/2" aria-hidden="true"></span>
+            <div class="rounded-2xl border border-gold-soft/30 bg-white/90 px-5 py-4 shadow-soft sm:px-6 sm:py-5 dark:border-white/10 dark:bg-night-card md:ml-[calc(50%_+_2rem)]">
+              <p class="font-display text-base font-semibold text-gold-soft sm:text-lg dark:text-gold-bright">1:00 PM</p>
+              <p class="mt-0.5 text-[0.95rem] font-medium sm:text-base">Lunch</p>
+            </div>
+          </li>
+          <li class="relative pl-12 md:pl-0">
+            <span class="absolute left-4 top-5 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gold-bright ring-4 ring-gold-bright/25 md:left-1/2" aria-hidden="true"></span>
+            <div class="rounded-2xl border border-gold-soft/30 bg-white/90 px-5 py-4 shadow-soft sm:px-6 sm:py-5 dark:border-white/10 dark:bg-night-card md:mr-[calc(50%_+_2rem)] md:text-right">
+              <p class="font-display text-base font-semibold text-gold-soft sm:text-lg dark:text-gold-bright">2:30 PM</p>
+              <p class="mt-0.5 text-[0.95rem] font-medium sm:text-base">Cake Cutting &amp; Songs</p>
+            </div>
+          </li>
+          <li class="relative pl-12 md:pl-0">
+            <span class="absolute left-4 top-5 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gold-bright ring-4 ring-gold-bright/25 md:left-1/2" aria-hidden="true"></span>
+            <div class="rounded-2xl border border-gold-soft/30 bg-white/90 px-5 py-4 shadow-soft sm:px-6 sm:py-5 dark:border-white/10 dark:bg-night-card md:ml-[calc(50%_+_2rem)]">
+              <p class="font-display text-base font-semibold text-gold-soft sm:text-lg dark:text-gold-bright">3:30 PM</p>
+              <p class="mt-0.5 text-[0.95rem] font-medium sm:text-base">Celebration &amp; Dancing</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== VENUE ==================== -->
+  <section id="venue" class="section-pad px-4">
+    <div class="mx-auto max-w-4xl text-center">
+      <div class="reveal">
+        <p class="eyebrow">Venue</p>
+        <h2 class="section-title mt-3">Where to Find Us</h2>
+        <p class="mt-4 text-base font-medium text-gold-soft sm:text-lg dark:text-gold-bright">Bole Bulbula, Addis Ababa</p>
+        <!-- EDIT: replace with your own short directions / landmarks for guests -->
+        <p class="mx-auto mt-3 max-w-xl text-[0.97rem] text-ink/70 sm:text-base dark:text-cream/70">We're celebrating near Bole Bulbula — follow the balloons! Use the map below to find your way, and give us a call if you need a hand getting there.</p>
+      </div>
+
+      <div class="reveal mt-10 grid gap-4 sm:gap-5 md:grid-cols-2">
+        <!-- EDIT: replace images/venue.jpg with a photo of the venue (or of Matania on the day) -->
+        <figure class="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-soft ring-1 ring-white/60 md:aspect-auto md:min-h-[320px]">
+          <svg class="absolute inset-0 m-auto h-12 w-12 text-white/70" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+          <img src="images/venue.jpg" alt="Matania — at the venue" loading="lazy" onerror="this.style.display='none'">
+        </figure>
+        <div class="h-[260px] overflow-hidden rounded-[2rem] border border-gold-soft/30 shadow-soft sm:h-[340px] md:h-auto md:min-h-[320px] dark:border-white/10">
+          <!-- REPLACE: paste your real Google Maps embed link for Bole Bulbula venue here -->
+          <iframe title="Map — Bole Bulbula, Addis Ababa" src="https://maps.google.com/maps?q=Bole%20Bulbula%2C%20Addis%20Ababa%2C%20Ethiopia&t=&z=14&ie=UTF8&iwloc=&output=embed" class="block h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Bole+Bulbula%2C+Addis+Ababa%2C+Ethiopia" target="_blank" rel="noopener"
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-soft to-gold-bright px-6 py-3.5 font-medium text-white shadow-lift transition hover:-translate-y-0.5 hover:brightness-105 sm:px-8 dark:text-night">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Get Directions
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY ==================== -->
+  <section id="gallery" class="section-pad bg-white/50 px-4 dark:bg-white/[0.03]">
+    <div class="mx-auto max-w-6xl">
+      <div class="reveal flex items-end justify-between gap-4">
+        <div>
+          <p class="eyebrow">Gallery</p>
+          <h2 class="section-title mt-3">Our Gallery</h2>
+        </div>
+        <div class="hidden gap-2 sm:flex">
+          <button id="gal-prev" type="button" aria-label="Scroll gallery backward" class="grid h-11 w-11 place-items-center rounded-full border border-gold-soft/40 bg-white/80 text-gold-soft shadow-soft transition hover:bg-gold-bright/15 dark:border-white/15 dark:bg-white/10 dark:text-gold-bright">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+          <button id="gal-next" type="button" aria-label="Scroll gallery forward" class="grid h-11 w-11 place-items-center rounded-full border border-gold-soft/40 bg-white/80 text-gold-soft shadow-soft transition hover:bg-gold-bright/15 dark:border-white/15 dark:bg-white/10 dark:text-gold-bright">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- EDIT: add real photos to an /images folder named gallery-1.jpg … gallery-8.jpg (each tile falls back to a pastel card until then) -->
+      <ul id="gallery-track" class="gallery-track mt-8 flex gap-4 overflow-x-auto pb-2 sm:gap-6">
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 1 of 8">
+            <span class="photo-frame relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-14 w-14 text-white/80" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+              <img src="images/gallery-1.jpg" alt="Matania — photo 1" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 2 of 8">
+            <span class="photo-frame--blue photo-frame relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-12 w-12 text-white/80" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+              <img src="images/gallery-2.jpg" alt="Matania — photo 2" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 3 of 8">
+            <span class="photo-frame--rose photo-frame relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-14 w-14 text-white/80" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+              <img src="images/gallery-3.jpg" alt="Matania — photo 3" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 4 of 8">
+            <span class="photo-frame photo-frame--blue relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-12 w-12 text-white/80" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+              <img src="images/gallery-4.jpg" alt="Matania — photo 4" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 5 of 8">
+            <span class="photo-frame--rose photo-frame relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-14 w-14 text-white/80" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+              <img src="images/gallery-5.jpg" alt="Matania — photo 5" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 6 of 8">
+            <span class="photo-frame photo-frame--blue relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-12 w-12 text-white/80" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+              <img src="images/gallery-6.jpg" alt="Matania — photo 6" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 7 of 8">
+            <span class="photo-frame relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-12 w-12 text-white/80" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+              <img src="images/gallery-7.jpg" alt="Matania — photo 7" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="gallery-tile group block w-60 shrink-0 text-left sm:w-72" aria-label="Open photo 8 of 8">
+            <span class="photo-frame--rose photo-frame relative block aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-soft ring-1 ring-white/60 transition-transform duration-300 group-hover:-translate-y-1">
+              <svg class="absolute inset-0 m-auto h-14 w-14 text-white/80" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+              <img src="images/gallery-8.jpg" alt="Matania — photo 8" loading="lazy" onerror="this.style.display='none'">
+            </span>
+          </button>
+        </li>
+      </ul>
+
+      <p class="reveal mt-6 text-center text-sm tracking-wide text-ink/60 dark:text-cream/60">More memories to come ✦</p>
+    </div>
+  </section>
+
+  <!-- ==================== RSVP / CONTACT ==================== -->
+  <section id="contact" class="section-pad-b px-4">
+    <div class="reveal mx-auto max-w-3xl rounded-[2rem] border border-gold-soft/30 bg-white/90 px-5 py-9 shadow-soft sm:px-10 sm:py-11 dark:border-white/10 dark:bg-night-card/90">
+      <div class="grid items-center gap-6 text-center md:grid-cols-[minmax(0,10rem)_minmax(0,1fr)] md:gap-8 md:text-left">
+        <!-- EDIT: replace images/contact.jpg with a favourite photo of Matania -->
+        <figure class="photo-frame relative mx-auto aspect-square w-24 overflow-hidden rounded-full shadow-soft ring-4 ring-white/70 sm:w-28 md:w-full dark:ring-white/10">
+          <svg class="absolute inset-0 m-auto h-9 w-9 text-white/70" viewBox="0 0 60 112" fill="currentColor" aria-hidden="true"><ellipse cx="30" cy="36" rx="21" ry="26"/><path d="M30 61l-5 7h10z"/></svg>
+          <img src="images/contact.jpg" alt="Matania — smiling" loading="lazy" onerror="this.style.display='none'">
+        </figure>
+
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 class="sub-title mt-2">Will you join us?</h2>
+          <p class="mt-3 text-[0.97rem] text-ink/70 sm:text-base dark:text-cream/70">No form to fill in — just let us know you're coming. A message or a quick call is enough!</p>
+
+          <div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
+            <!-- REPLACE: replace 2519XXXXXXXX with the real phone number (keep it in international format for tap-to-call) -->
+            <a href="tel:+2519XXXXXXXX" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-soft to-gold-bright px-6 py-3.5 font-medium text-white shadow-lift transition hover:-translate-y-0.5 hover:brightness-105 sm:w-auto dark:text-night">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1.1.5 1.1 1.1V20c0 .6-.5 1.1-1.1 1.1h-3.4C10.9 21.1 2.9 13.1 2.9 3.2c0-.6.5-1.1 1.1-1.1h3.5c.6 0 1.1.5 1.1 1.1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+              Call +251 9XX XXX XXX
+            </a>
+            <!-- REPLACE: same number in WhatsApp format (international, no plus sign) -->
+            <a href="https://wa.me/2519XXXXXXXX" target="_blank" rel="noopener" class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold-soft/50 px-6 py-3.5 font-medium text-gold-soft transition hover:bg-gold-bright/15 sm:w-auto dark:border-white/15 dark:text-gold-bright">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.5-.3-2.7.7.7-2.6-.3-.5A8 8 0 0 1 12 4zm-3 4.2c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.2.2 1.8 2.8 4.4 3.8 2.2.8 2.6.7 3.1.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2 0-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.6 8.9c-.2-.4-.4-.4-.6-.4z"/></svg>
+              Send a message
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-night px-4 py-12 text-center text-cream/85 sm:py-14 dark:bg-[#12161F]">
+  <p class="font-display text-2xl font-semibold text-gold-bright sm:text-3xl">Matania</p>
+  <p class="mt-2 text-sm tracking-wide">Sunday, September 20, 2026 · Bole Bulbula, Addis Ababa</p>
+  <div class="mt-5 flex items-center justify-center gap-4" aria-hidden="true">
+    <span class="divider-line"></span><span class="text-gold-bright">✦</span><span class="divider-line"></span>
+  </div>
+  <p class="mt-5 text-sm text-cream/60">Made with love for Matania's first birthday 🎈</p>
+</footer>
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Gallery photo viewer">
+  <button id="lb-close" type="button" class="lb-btn fixed right-4 top-4 z-10" aria-label="Close photo viewer">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button id="lb-prev" type="button" class="lb-btn fixed left-2 top-1/2 z-10 -translate-y-1/2 sm:left-6" aria-label="Previous photo">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+  <figure class="photo-frame relative h-[min(72vh,560px)] w-[min(92vw,760px)] overflow-hidden rounded-3xl shadow-lift">
+    <img id="lb-img" src="" alt="">
+  </figure>
+  <button id="lb-next" type="button" class="lb-btn fixed right-2 top-1/2 z-10 -translate-y-1/2 sm:right-6" aria-label="Next photo">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <p id="lb-caption" class="mt-4 px-4 text-center text-sm text-white/85"></p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  document.documentElement.classList.add('js'); /* enables scroll-reveal only when JS runs */
+
+  /* ---------- Day / night theme toggle ---------- */
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  var saved = null;
+  try { saved = localStorage.getItem('matania-theme'); } catch (e) { /* storage unavailable */ }
+  if (saved === 'dark' || saved === 'light') { root.classList.toggle('dark', saved === 'dark'); }
+  function syncToggle() {
+    if (toggle) { toggle.setAttribute('aria-pressed', root.classList.contains('dark') ? 'true' : 'false'); }
+  }
+  syncToggle();
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      root.classList.toggle('dark', dark);
+      try { localStorage.setItem('matania-theme', dark ? 'dark' : 'light'); } catch (e) { /* ignore */ }
+      syncToggle();
+    });
+  }
+
+  /* ---------- Sticky nav background on scroll ---------- */
+  var nav = document.getElementById('site-nav');
+  function onScroll() { if (nav) { nav.classList.toggle('nav-scrolled', window.scrollY > 12); } }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Mobile hamburger menu ---------- */
+  var menuBtn = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  function setMenu(open) {
+    if (!menuBtn || !mobileMenu) { return; }
+    mobileMenu.classList.toggle('open', open);
+    if (nav) { nav.classList.toggle('menu-open', open); }
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function (event) {
+      event.stopPropagation();
+      setMenu(!mobileMenu.classList.contains('open'));
+    });
+    mobileMenu.addEventListener('click', function (event) {
+      if (event.target.closest('a')) { setMenu(false); } /* close after tapping a link */
+    });
+    document.addEventListener('click', function (event) { /* close on outside click */
+      if (!mobileMenu.classList.contains('open')) { return; }
+      var target = event.target;
+      if (target && target.closest && (target.closest('#mobile-menu') || target.closest('#menu-toggle'))) { return; }
+      setMenu(false);
+    });
+    document.addEventListener('keydown', function (event) { /* close on Escape */
+      if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        setMenu(false);
+        menuBtn.focus();
+      }
+    });
+    window.addEventListener('resize', function () { /* back on desktop layout, no menu needed */
+      if (window.innerWidth >= 640) { setMenu(false); }
+    });
+  }
+
+  /* ---------- Scroll-reveal animations ---------- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Highlight the nav link for the section in view ---------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+  var sections = navLinks
+    .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+    .filter(Boolean);
+  function setActive() {
+    var pos = window.scrollY + window.innerHeight * 0.35;
+    var current = null;
+    sections.forEach(function (section) { if (section.offsetTop <= pos) { current = section; } });
+    navLinks.forEach(function (link) {
+      var active = current && link.getAttribute('href') === '#' + current.id;
+      link.classList.toggle('active', active);
+      if (active) { link.setAttribute('aria-current', 'true'); } else { link.removeAttribute('aria-current'); }
+    });
+  }
+  setActive();
+  window.addEventListener('scroll', setActive, { passive: true });
+
+  /* ---------- Live countdown → 2026-09-20T13:00:00+03:00 (Africa/Addis_Ababa, UTC+3) ---------- */
+  var target = new Date('2026-09-20T13:00:00+03:00').getTime();
+  var fields = {
+    days: document.getElementById('cd-days'),
+    hours: document.getElementById('cd-hours'),
+    minutes: document.getElementById('cd-minutes'),
+    seconds: document.getElementById('cd-seconds')
+  };
+  var doneMsg = document.getElementById('cd-done');
+  var timer = null;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function setNum(el, value) {
+    if (el && el.textContent !== value) {
+      el.textContent = value;
+      el.classList.remove('digit-pop');
+      void el.offsetWidth; /* restart the pop animation */
+      el.classList.add('digit-pop');
+    }
+  }
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      setNum(fields.days, '00'); setNum(fields.hours, '00');
+      setNum(fields.minutes, '00'); setNum(fields.seconds, '00');
+      if (doneMsg) { doneMsg.classList.remove('hidden'); }
+      if (timer) { clearInterval(timer); timer = null; }
+      return;
+    }
+    setNum(fields.days, String(Math.floor(diff / 864e5)));
+    setNum(fields.hours, pad(Math.floor((diff % 864e5) / 36e5)));
+    setNum(fields.minutes, pad(Math.floor((diff % 36e5) / 6e4)));
+    setNum(fields.seconds, pad(Math.floor((diff % 6e4) / 1e3)));
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+
+  /* ---------- Gallery carousel arrows ---------- */
+  var track = document.getElementById('gallery-track');
+  var prevBtn = document.getElementById('gal-prev');
+  var nextBtn = document.getElementById('gal-next');
+  function tileStep() {
+    if (!track) { return 280; }
+    var tile = track.querySelector('.gallery-tile');
+    if (!tile) { return 280; }
+    var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+    return tile.getBoundingClientRect().width + gap;
+  }
+  if (track && prevBtn) { prevBtn.addEventListener('click', function () { track.scrollBy({ left: -tileStep(), behavior: 'smooth' }); }); }
+  if (track && nextBtn) { nextBtn.addEventListener('click', function () { track.scrollBy({ left: tileStep(), behavior: 'smooth' }); }); }
+
+  /* ---------- Lightbox ---------- */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCaption = document.getElementById('lb-caption');
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.gallery-tile'));
+  var photos = tiles.map(function (tile, i) {
+    var img = tile.querySelector('img');
+    return {
+      src: img ? img.getAttribute('src') : '',
+      alt: img && img.getAttribute('alt') ? img.getAttribute('alt') : 'Matania — photo ' + (i + 1)
+    };
+  });
+  var current = 0;
+  var lastFocus = null;
+
+  function renderLb() {
+    var photo = photos[current];
+    if (!photo) { return; }
+    lbImg.onerror = function () { lbImg.style.display = 'none'; }; /* missing file → pastel fallback, no broken icon */
+    lbImg.style.display = '';
+    lbImg.src = photo.src;
+    lbImg.alt = photo.alt;
+    lbCaption.textContent = photo.alt + '  ·  ' + (current + 1) + ' / ' + photos.length;
+  }
+  function openLb(index) {
+    current = (index + photos.length) % photos.length;
+    lastFocus = document.activeElement;
+    renderLb();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden'; /* stop the page scrolling behind the modal */
+    document.getElementById('lb-close').focus();
+  }
+  function closeLb() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    if (lastFocus) { lastFocus.focus(); }
+  }
+  function stepLb(dir) {
+    current = (current + dir + photos.length) % photos.length;
+    renderLb();
+  }
+
+  tiles.forEach(function (tile, i) { tile.addEventListener('click', function () { openLb(i); }); });
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.getElementById('lb-prev').addEventListener('click', function () { stepLb(-1); });
+  document.getElementById('lb-next').addEventListener('click', function () { stepLb(1); });
+  lightbox.addEventListener('click', function (event) { if (event.target === lightbox) { closeLb(); } });
+  document.addEventListener('keydown', function (event) {
+    if (!lightbox.classList.contains('open')) { return; }
+    if (event.key === 'Escape') { closeLb(); }
+    else if (event.key === 'ArrowLeft') { stepLb(-1); }
+    else if (event.key === 'ArrowRight') { stepLb(1); }
+  });
+
+})();
+</script>
+</body>
+</html>

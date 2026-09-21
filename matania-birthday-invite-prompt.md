@@ -89,7 +89,7 @@ Where: Bole Bulbula 93 behind fresh corner
 **9. RSVP section** (`id="rsvp"`)
 - Heading: "Will you join us?"
 - An embedded `<iframe>` placeholder for a Google Form, with an HTML comment `<!-- REPLACE: paste your own Google Form embed link here for RSVP -->`.
-- Below the iframe, a fallback simple contact line: "Or RSVP directly via WhatsApp/Telegram/phone" with a placeholder button `href="https://wa.me/2519XXXXXXXX"` (comment to replace with the real number).
+- Below the iframe, a fallback simple contact line: "Or RSVP directly via WhatsApp/Telegram/phone" with a placeholder button `href="https://wa.me/251961310060"` (comment to replace with the real number).
 
 **10. Share the Moments section** (`id="memories"`, optional)
 - Short paragraph inviting guests to send their photos from the day.

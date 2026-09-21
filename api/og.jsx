@@ -83,7 +83,7 @@ export default async function handler() {
 
         <div style={{ display: 'flex', alignItems: 'center', marginTop: 30 }}>
           <div style={{ width: 120, height: 3, backgroundImage: `linear-gradient(to right, transparent, ${THEME.goldSoft})` }} />
-          <div style={{ margin: '0 22px', fontFamily: 'Poppins', fontSize: 34, color: THEME.goldSoft }}>✦</div>
+          <div style={{ margin: '0 22px', width: 14, height: 14, backgroundColor: THEME.goldSoft, transform: 'rotate(45deg)' }} />
           <div style={{ width: 120, height: 3, backgroundImage: `linear-gradient(to left, transparent, ${THEME.goldSoft})` }} />
         </div>
 

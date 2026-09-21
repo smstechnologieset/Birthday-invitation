@@ -9,14 +9,18 @@
 <!-- Favicon: 🎈 emoji served as an inline SVG data URI -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎈</text></svg>">
 
-<!-- EDIT: Open Graph — once the site is deployed, set og:url and og:image to ABSOLUTE URLs (og:image needs a full https:// link for WhatsApp/Telegram previews) -->
+<!-- Open Graph — og:url and og:image use ABSOLUTE URLs (full https://) so WhatsApp/Telegram/Facebook previews load correctly. If your Vercel domain changes, update them here. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Matania's 1st Birthday">
 <meta property="og:title" content="Matania's 1st Birthday — You're Invited! 🎈">
 <meta property="og:description" content="Our Little Sunshine is Turning One! Sunday, September 27, 2026 · 7:00 (Lunch) · Bole Bulbula 93 behind fresh corner, Addis Ababa.">
-<meta property="og:image" content="images/hero.jpg.png">
-<meta property="og:url" content="https://matania-birthday.example.com/">
+<meta property="og:image" content="https://matania-birthday.vercel.app/api/og">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Matania's 1st Birthday — you're invited! 🎈">
+<meta property="og:url" content="https://matania-birthday.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://matania-birthday.vercel.app/api/og">
 <meta name="theme-color" content="#FFF8F0">
 
 <!-- Google Fonts: Fraunces (display serif) · Poppins (body) · Noto Sans Ethiopic (Amharic) -->

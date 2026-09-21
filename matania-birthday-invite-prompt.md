@@ -15,9 +15,9 @@ Generate the ENTIRE site in one response.
 
 **Baby's name:** Matania
 **Occasion:** 1st Birthday
-**Date:** Sunday, September 20, 2026
+**Date:** Sunday, September 27, 2026
 **Time:** 1:00 PM (displayed as "7:00 (Lunch)" per local convention — see note below)
-**Venue:** Bole Bulbula, Addis Ababa, Ethiopia
+**Venue:** Bole Bulbula 93 behind fresh corner, Addis Ababa, Ethiopia
 
 **Amharic invitation text (use verbatim, in Amharic script, right after / alongside the English):**
 ```
@@ -32,9 +32,9 @@ Generate the ENTIRE site in one response.
 ```
 Our Little Sunshine is Turning One!
 Please join us to celebrate Matania's 1st birthday! Your presence would make the day extra special.
-When: Sunday, September 20, 2026
+When: Sunday, September 27, 2026
 Time: 7:00 (Lunch)
-Where: Bole Bulbula
+Where: Bole Bulbula 93 behind fresh corner
 ```
 
 > Note for the agent: keep both language blocks — Amharic first, English underneath (or side-by-side on desktop, stacked on mobile). Do not translate one into the other yourself; both texts are already final as given above. Where the invitation prose says "this Sunday" idiomatically, that's fine to keep, but the hero/countdown must reference the concrete date (Sept 20, 2026) so the countdown timer works.
@@ -50,7 +50,7 @@ Where: Bole Bulbula
 - Soft background: a warm gradient (cream → soft gold → sky blue) with subtle decorative SVG shapes (a sun, a few clouds, a couple of floating balloons, light confetti dots) — all inline SVG, no external images needed here.
 - Small eyebrow text: "Our Little Sunshine is Turning One!"
 - Large elegant display of the name: **Matania**
-- Subheading line: "Sunday, September 20, 2026 · Bole Bulbula, Addis Ababa"
+- Subheading line: "Sunday, September 27, 2026 · Bole Bulbula 93 behind fresh corner, Addis Ababa"
 - A live countdown timer to **2026-09-20T13:00:00+03:00** (Africa/Addis_Ababa, UTC+3), showing Days / Hours / Minutes / Seconds in four boxes, updating every second via `setInterval`.
 - A subtle "scroll down" indicator/arrow at the bottom.
 - One full-bleed placeholder photo slot for the baby's hero photo: `<img src="images/hero.jpg" alt="Matania">` inside a soft rounded/framed container (do NOT link to any real external photo — this is a placeholder the user will replace).
@@ -67,7 +67,7 @@ Where: Bole Bulbula
 - A short, warm, non-denominational one-line blessing/wish for the child's first year (something like a wish for health, joy, and love — write your own gentle line, nothing borrowed from any copyrighted source). Wrap the whole section in an HTML comment marker `<!-- OPTIONAL SECTION: remove if not wanted, or replace with a scripture verse / family blessing -->`.
 
 **6. The Day / schedule section** (`id="timeline"`)
-- Heading: "The Celebration — Sunday, September 20, 2026"
+- Heading: "The Celebration — Sunday, September 27, 2026"
 - A simple vertical timeline with 4 placeholder stops guests can expect, clearly marked as editable placeholders (e.g. `<!-- EDIT: confirm actual schedule -->`):
   - 12:30 PM — Guests Arrive
   - 1:00 PM — Lunch
@@ -76,8 +76,8 @@ Where: Bole Bulbula
 
 **7. Venue section** (`id="venue"`)
 - Heading: "Where to Find Us"
-- Venue name "Bole Bulbula, Addis Ababa" with a short line of directions text placeholder.
-- An embedded Google Maps `<iframe>` with a placeholder `src` and an HTML comment `<!-- REPLACE: paste your real Google Maps embed link for Bole Bulbula venue here -->`.
+- Venue name "Bole Bulbula 93 behind fresh corner, Addis Ababa" with a short line of directions text placeholder.
+- An embedded Google Maps `<iframe>` with a placeholder `src` and an HTML comment `<!-- REPLACE: paste your real Google Maps embed link for Bole Bulbula 93 behind fresh corner venue here -->`.
 - A "Get Directions" button linking to a placeholder Google Maps URL.
 
 **8. Gallery section** (`id="gallery"`)
@@ -97,7 +97,7 @@ Where: Bole Bulbula
 - A placeholder button `href="#"` labeled "Share Your Photos" with a comment to link to a Telegram bot / shared album link of the user's choice.
 
 **11. Footer**
-- "Matania" name, "Sunday, September 20, 2026 · Bole Bulbula, Addis Ababa"
+- "Matania" name, "Sunday, September 27, 2026 · Bole Bulbula 93 behind fresh corner, Addis Ababa"
 - One warm closing line: "Made with love for Matania's first birthday 🎈"
 
 ## DESIGN SYSTEM

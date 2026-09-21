@@ -1,5 +1,9 @@
 import { ImageResponse } from '@vercel/og';
 
+// @vercel/og renders reliably on the Edge runtime (the resvg WASM is inlined there,
+// whereas the Node.js runtime often fails to bundle the .wasm asset -> 500 on invoke).
+export const config = { runtime: 'edge' };
+
 // Invitation details — edit here and the social preview updates everywhere.
 const DATA = {
   eyebrow: "YOU'RE INVITED",
@@ -50,8 +54,8 @@ function Balloon({ left, top, size, color }) {
   });
 }
 
-// Modern Vercel Function signature (Node.js runtime). Responds to GET /api/og.
-export async function GET() {
+// Edge Function handler for GET /api/og.
+export default async function handler() {
   const fonts = await loadFonts();
 
   const card = h(

@@ -13,11 +13,13 @@ const DATA = {
 };
 
 // Palette lifted from the site (see .photo-frame gradient + gold accents).
+// ink covers all text — the client asked for dark text (gold blended into the
+// cream/sky background, especially "YOU'RE INVITED" and the venue line).
 const THEME = {
   bg: 'linear-gradient(135deg,#FFEBCB 0%,#F6D9A6 48%,#CBE6F2 100%)',
-  ink: '#5A4632',
-  gold: '#C98A2E',
-  goldSoft: '#D9A25C',
+  ink: '#1C1610',
+  gold: '#1C1610',
+  goldSoft: '#3A2E1E',
 };
 
 // Plain-JS element factory (no JSX) so Vercel can deploy this as a .js Function.

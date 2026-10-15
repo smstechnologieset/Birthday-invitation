@@ -419,20 +419,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid #D9A25C; outline-offs
       <svg class="decor anim-rise left-[12%] bottom-[10%] w-2.5 text-gold-bright/80" style="animation-delay:-6s"><use href="#d-dot" xlink:href="#d-dot"/></svg>
     </div>
 
-    <div class="relative z-10 mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-14">
-      <figure class="reveal photo-frame photo-frame--blue relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2rem] shadow-soft ring-1 ring-white/60 md:order-2">
-        <svg class="absolute inset-0 m-auto h-16 w-16 text-white/70" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
-        <!-- photo_2_2026-10-15_11-10-53.jpg copied to images/first-year.jpg -->
-        <img src="images/first-year.jpg" alt="Bubu and Babisho's first year" loading="lazy" onerror="this.style.display='none'">
-      </figure>
+    <div class="relative z-10 mx-auto max-w-5xl">
+      <!-- Two photos side-by-side: mother (left) · father (right) -->
+      <div class="reveal grid grid-cols-2 gap-3 sm:gap-5 mx-auto max-w-2xl">
+        <figure class="photo-frame photo-frame--rose relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft ring-1 ring-white/60">
+          <svg class="absolute inset-0 m-auto h-12 w-12 text-white/70" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+          <!-- photo_2_2026-10-15_11-10-53.jpg copied to images/first-year.jpg -->
+          <img src="images/first-year.jpg" alt="Mama with Bubu and Babisho" loading="lazy" onerror="this.style.display='none'">
+        </figure>
+        <figure class="photo-frame photo-frame--blue relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft ring-1 ring-white/60">
+          <svg class="absolute inset-0 m-auto h-12 w-12 text-white/70" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4c3 10 8 15 18 18-10 3-15 8-18 18-3-10-8-15-18-18 10-3 15-8 18-18z"/></svg>
+          <img src="images/father-with-kids.jpg" alt="Baba with Bubu and Babisho" loading="lazy" onerror="this.style.display='none'">
+        </figure>
+      </div>
 
-      <div class="md:order-1">
+      <!-- Text below the photos, centred -->
+      <div class="mt-8 text-center sm:mt-10">
         <div class="reveal">
           <p class="eyebrow">Their First Year</p>
           <h2 class="section-title mt-3">A Year of Firsts</h2>
         </div>
         <!-- EDIT: personalize this paragraph with your own memories of Bubu &amp; Babisho's first year -->
-        <div class="reveal reveal-delay-1 mt-5 space-y-4 text-[0.97rem] leading-relaxed text-ink/80 sm:text-base dark:text-cream/75">
+        <div class="reveal reveal-delay-1 mx-auto mt-5 max-w-2xl space-y-4 text-[0.97rem] leading-relaxed text-ink/80 sm:text-base dark:text-cream/75">
           <p>This year has been a collection of beautiful firsts — the first sleepy smiles, the first contagious giggles, the first tiny hands wrapped around a finger, and the first wobbly steps across the living-room floor.</p>
           <p>Every day with Bubu &amp; Babisho has been a gift of pure joy. Now the first of many birthdays is here, and we can't imagine celebrating it anywhere but surrounded by the people we love most.</p>
         </div>

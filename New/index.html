@@ -9,19 +9,18 @@
 <!-- Favicon: 🎈 emoji served as an inline SVG data URI -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎈</text></svg>">
 
-<!-- Open Graph — og:url and og:image must be ABSOLUTE URLs (full https://) for WhatsApp/Telegram/Facebook previews.
-     REPLACE "YOUR-DEPLOY-DOMAIN" with the real domain (e.g. bubu-babisho.vercel.app) right after the first deploy. -->
+<!-- Open Graph — og:url and og:image use ABSOLUTE URLs (full https://) so WhatsApp/Telegram/Facebook previews load correctly. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bubu &amp; Babisho's 1st Birthday">
 <meta property="og:title" content="Bubu &amp; Babisho's 1st Birthday — You're Invited! 🎈">
 <meta property="og:description" content="Our two little sunshines are turning one! Sunday, October 18, 2026 · 3:00 PM (9:00 local) · Behind Dagmawi Berhan Secondary School.">
-<meta property="og:image" content="https://YOUR-DEPLOY-DOMAIN/images/hero.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://bubu-babisho-birthday.vercel.app/images/hero.jpg">
+<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="1280">
 <meta property="og:image:alt" content="Bubu &amp; Babisho's 1st Birthday — you're invited! 🎈">
-<meta property="og:url" content="https://YOUR-DEPLOY-DOMAIN/">
+<meta property="og:url" content="https://bubu-babisho-birthday.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://YOUR-DEPLOY-DOMAIN/images/hero.jpg">
+<meta name="twitter:image" content="https://bubu-babisho-birthday.vercel.app/images/hero.jpg">
 <meta name="theme-color" content="#FFF8F0">
 
 <!-- Google Fonts: Fraunces (display serif) · Poppins (body) · Noto Sans Ethiopic (Amharic) -->
@@ -614,14 +613,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid #D9A25C; outline-offs
           <img src="images/venue.jpg" alt="Bubu and Babisho — at the venue" loading="lazy" onerror="this.style.display='none'">
         </figure> -->
         <div class="h-[260px] overflow-hidden rounded-[2rem] border border-gold-soft/30 shadow-soft sm:h-[340px] md:h-auto md:min-h-[320px] dark:border-white/10">
-          <!-- REPLACE: the Google Maps embed below searches by school name because the coordinates in the
-               shared link (20.812149, 0.000005) point to the Sahara desert — the share link looks mis-copied.
-               Once you have the correct pin, replace q= with the coordinates, e.g. q=9.012345,38.765432 -->
-          <iframe title="Map — behind Dagmawi Berhan Secondary School" src="https://maps.google.com/maps?q=Dagmawi%20Berhan%20Secondary%20School&z=15&ie=UTF8&iwloc=&output=embed" class="block h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- Google Maps embed centered on the venue pin (9.032070, 38.726356 — Addis Ketema, from the Apple Maps share link) -->
+          <iframe title="Map — behind Dagmawi Berhan Secondary School" src="https://maps.google.com/maps?q=9.032070,38.726356&z=16&ie=UTF8&iwloc=&output=embed" class="block h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
-      <a href="https://www.google.com/maps/place/20%C2%B048'43.7%22N+0%C2%B000'00.0%22E/@20.812149,0.000005,16z/data=!4m4!3m3!8m2!3d20.812149!4d0.000005?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener"
+      <a href="https://www.google.com/maps/search/?api=1&query=9.032070%2C38.726356" target="_blank" rel="noopener"
         class="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-soft to-gold-bright px-6 py-3.5 font-medium text-white shadow-lift transition hover:-translate-y-0.5 hover:brightness-105 sm:px-8 dark:text-night">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
         Get Directions
